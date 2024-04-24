@@ -5,10 +5,12 @@
 <hibernate-configuration>
     <session-factory>
         <property name="hibernate.connection.driver_class">com.mysql.jdbc.Driver</property>
-        <property name="hibernate.connection.password">Buwiga.33</property>
+        <property name="hibernate.connection.password">hibernate</property>
         <property name="hibernate.connection.url">jdbc:mysql://localhost/Recu3</property>
-        <property name="hibernate.connection.username">Adrian</property>
+        <property name="hibernate.connection.username">hibernate</property>
         <property name="hibernate.default_schema">recu3</property>
         <property name="hibernate.dialect">org.hibernate.dialect.MySQLDialect</property>
+        <mapping resource="Recu/Fabricantes.hbm.xml"/>
+        <mapping resource="Recu/Programas.hbm.xml"/>
     </session-factory>
 </hibernate-configuration>
