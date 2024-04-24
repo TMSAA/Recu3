@@ -1,0 +1,24 @@
+<?xml version="1.0" encoding="UTF-8" standalone="no"?>
+<!-- Generated 24 abr 2024 18:08:14 by Hibernate Tools 6.3.1.Final --><!DOCTYPE hibernate-mapping PUBLIC "-//Hibernate/Hibernate Mapping DTD 3.0//EN" "http://www.hibernate.org/dtd/hibernate-mapping-3.0.dtd">
+<hibernate-mapping>
+    <class catalog="recu3" name="Recu.Programas" optimistic-lock="none" table="programas">
+        <id name="codPro" type="string">
+            <column length="5" name="COD_PRO"/>
+            <generator class="assigned"/>
+        </id>
+        <property name="nombre" type="string">
+            <column length="50" name="NOMBRE"/>
+        </property>
+        <property name="ver" type="string">
+            <column length="20" name="VER"/>
+        </property>
+        <set fetch="select" inverse="true" lazy="true" name="fabricanteses" table="desarrolla">
+            <key>
+                <column length="5" name="COD_PRO" not-null="true"/>
+            </key>
+            <many-to-many entity-name="Recu.Fabricantes">
+                <column length="5" name="COD_FAB" not-null="true"/>
+            </many-to-many>
+        </set>
+    </class>
+</hibernate-mapping>
