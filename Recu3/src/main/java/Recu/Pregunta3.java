@@ -9,6 +9,8 @@ import java.util.Scanner;
 import org.hibernate.Session;
 import org.hibernate.SessionFactory;
 import org.hibernate.cfg.Configuration;
+import org.hibernate.exception.ConstraintViolationException;
+import org.hibernate.exception.DataException;
 import org.hibernate.query.Query;
 
 public class Pregunta3 {
@@ -68,8 +70,8 @@ public class Pregunta3 {
             sc.close();
             session.close();
 			
-		} catch (IOException e) {
-			System.out.println("Error al leer el archivo: "+e.getMessage());
+		} catch (IOException | DataException | ConstraintViolationException e) {
+			System.out.println("Error: "+e.getMessage());
 		}
 	}
 }
